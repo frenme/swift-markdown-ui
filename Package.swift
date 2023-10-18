@@ -16,18 +16,11 @@ let package = Package(
       targets: ["MarkdownUI"]
     )
   ],
-  dependencies: [
-    .package(url: "https://github.com/kean/Nuke", from: "12.0.0")
-  ],
   targets: [
     .target(name: "cmark-gfm"),
     .target(
       name: "MarkdownUI",
-      dependencies: [
-        "cmark-gfm",
-        .product(name: "Nuke", package: "Nuke"),
-        .product(name: "NukeUI", package: "Nuke"),
-      ]
+      dependencies: ["cmark-gfm"]
     )
   ]
 )
